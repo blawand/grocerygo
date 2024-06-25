@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grocery Price Converter</title>
+    <title>GroceryGo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Grocery Price Converter</h1>
+        <h1>GroceryGo</h1>
+        <div class="image-container" id="image-container">
+            <img id="grocery-image" src="" alt="Grocery Item Image">
+        </div>
         <div class="grocery-item">
             <label for="grocery-item-input">Grocery Item:</label>
             <input type="text" id="grocery-item-input" placeholder="e.g., Potatoes">
+            <ul id="dropdown"></ul>
         </div>
         <div class="price-converter">
             <div class="input-group">
                 <label for="usd-per-lb">Price in USD per lb:</label>
-                <input type="number" id="usd-per-lb" placeholder="e.g., 1.99">
+                <input type="number" id="usd-per-lb" placeholder="e.g., 1.99" min="0">
             </div>
             <div class="input-group">
                 <label for="cad-per-kg">Price in CAD per kg:</label>
-                <input type="number" id="cad-per-kg" placeholder="e.g., 4.39">
+                <input type="number" id="cad-per-kg" placeholder="e.g., 4.39" min="0">
             </div>
         </div>
         <button id="clear-button">Clear</button>

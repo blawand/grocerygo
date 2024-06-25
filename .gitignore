@@ -1,0 +1,18 @@
+# Dependency directories
+node_modules/
+
+# Environment variables file
+.env
+
+# Log files
+*.log
+
+# macOS specific files
+.DS_Store
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Compiled binary addons (if any)
+build/Release/
