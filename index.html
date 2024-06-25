@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Price Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Grocery Price Converter</h1>
+        <div class="grocery-item">
+            <label for="grocery-item-input">Grocery Item:</label>
+            <input type="text" id="grocery-item-input" placeholder="e.g., Potatoes">
+        </div>
+        <div class="price-converter">
+            <div class="input-group">
+                <label for="usd-per-lb">Price in USD per lb:</label>
+                <input type="number" id="usd-per-lb" placeholder="e.g., 1.99">
+            </div>
+            <div class="input-group">
+                <label for="cad-per-kg">Price in CAD per kg:</label>
+                <input type="number" id="cad-per-kg" placeholder="e.g., 4.39">
+            </div>
+        </div>
+        <button id="clear-button">Clear</button>
+        <div class="results">
+            <p id="average-price"></p>
+            <p id="deal-info"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
