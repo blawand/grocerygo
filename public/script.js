@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('/api/exchange-rate');
             const data = await response.json();
             exchangeRate = data.rate;
+            console.log('Exchange rate fetched:', exchangeRate);
         } catch (error) {
             console.error('Error fetching exchange rate:', error);
         }
