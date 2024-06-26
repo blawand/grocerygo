@@ -1,12 +1,12 @@
 {
   "version": 2,
   "builds": [
-    { "src": "server.js", "use": "@vercel/node" }
+    { "src": "api/*.js", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/api/exchange-rate", "dest": "/api/exchange-rate.js" },
     { "src": "/api/dataset", "dest": "/api/dataset.js" },
     { "src": "/api/unsplash-image", "dest": "/api/unsplash-image.js" },
-    { "src": "/(.*)", "dest": "/" }
+    { "src": "/(.*)", "dest": "/public/$1" }
   ]
 }
