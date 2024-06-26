@@ -16,3 +16,4 @@ node_modules/
 
 # Compiled binary addons (if any)
 build/Release/
+.vercel
