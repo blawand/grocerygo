@@ -14,12 +14,18 @@ app.use(express.static(path.join(__dirname, 'public')));
   const fetch = (await import('node-fetch')).default;
 
   const unsplashAccessKey = process.env.UNSPLASH_ACCESS_KEY;
+  if (!unsplashAccessKey) {
+    console.error('UNSPLASH_ACCESS_KEY is not set');
+  }
 
   app.get('/api/exchange-rate', async (req, res) => {
     const exchangeRateApi = process.env.EXCHANGE_RATE_API;
     console.log('Fetching exchange rate from:', exchangeRateApi);
     try {
       const response = await fetch(exchangeRateApi);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
       const data = await response.json();
       res.json({ rate: data.rates.CAD });
     } catch (error) {
@@ -57,6 +63,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
     try {
       const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
       const data = await response.json();
       if (data.results && data.results.length > 0) {
         res.json({ imageUrl: data.results[0].urls.regular });
