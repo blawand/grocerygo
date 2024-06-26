@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
   });
 
   app.get('/api/dataset', async (req, res) => {
-    const datasetPath = path.join(__dirname, process.env.DATASET_PATH);
+    const datasetPath = path.join(__dirname, 'public', 'data', 'cleaned_sobeys.csv');
     console.log('Reading dataset from:', datasetPath);
     try {
       const data = await fs.readFile(datasetPath, 'utf8');
